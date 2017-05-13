@@ -49,4 +49,27 @@ describe('Dada la funcion brace', () => {
       });
     });
   });
+
+  describe('cuando el patrón recibido es múltiple y profundo', () => {
+    describe('y el patrón contiene un patrón interno', () => {
+      it('entonces debe aceptar una apertura seguido de un patrón anidado seguigo de un cierre', () => {
+        braces('{{{{{}}}}}').should.be.true;
+      });
+      it('entonces debe rechazar una apertura seguido de un patrón anidado seguigo de un cierre seguido de un cierre incorrecto', () => {
+        braces('{{}}}').should.not.be.true;
+      });
+    });
+
+    describe('cuando y el patrón le sigue un patrón', () => {
+      it('debe aceptar una apertura seguido de un patrón anidado seguigo de un cierre', () => {
+        braces('{}{}{}{}{}').should.be.true;
+      });
+    });
+
+    describe('cuando y el patrón le sigue un patrón', () => {
+      it('debe aceptar una apertura seguido de un patrón anidado seguigo de un cierre', () => {
+        braces('{{{{}}}}{}{}{}{}').should.be.true;
+      });
+    });
+  });
 });
