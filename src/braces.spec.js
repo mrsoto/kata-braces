@@ -79,5 +79,14 @@ describe('Dada la funcion brace', () => {
         braces('x').should.be.false;
       });
     });
+
+    describe('y los tokens son [ ]', () => {
+
+      it('entonces debe reconocer los corchetes', () => {
+        braces('[]').should.be.true;
+      });
+
+    });
+
   });
 });
