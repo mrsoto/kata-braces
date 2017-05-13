@@ -3,12 +3,14 @@
 const braces = (str) => {
   const tokens = Array.from(str);
   const stack = [];
+  const EOS = 'EOS';
 
   if (!tokens.length) return false;
-  do {
+
+  for (;;) {
     let nextToken = tokens.shift();
 
-    switch (nextToken) {
+    switch (nextToken || EOS) {
       case '{': {
         stack.push(nextToken);
         break;
@@ -19,10 +21,18 @@ const braces = (str) => {
         if (openner !== '{') {
           return false;
         }
+        break;
+      }
+
+      case EOS: {
+        return !stack.length;
+      }
+
+      default: {
+        return false;
       }
     }
-  } while (tokens.length);
-  return !stack.length;
+  }
 };
 
 module.exports = braces;

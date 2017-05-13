@@ -72,4 +72,12 @@ describe('Dada la funcion brace', () => {
       });
     });
   });
+
+  describe('cuando el token de apertura y cierre son distintos a {}', () => {
+    describe('y recibe caracteres inválidos', () => {
+      it('debe rechazar cualquier caracter no incluido en el dominio de entrada', () => {
+        braces('x').should.be.false;
+      });
+    });
+  });
 });
