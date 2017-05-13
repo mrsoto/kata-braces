@@ -96,6 +96,10 @@ describe('Dada la funcion brace', () => {
       it('entonces debe reconocer los paréntesis', () => {
         braces('()').should.be.true;
       });
+
+      it('entonces debe reconocer los paréntesis conjunto con las llaves y los corchetes', () => {
+        braces('[({})]{}').should.be.true;
+      });
     });
 
   });
