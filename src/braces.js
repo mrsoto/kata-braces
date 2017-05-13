@@ -7,6 +7,7 @@ const braces = (str) => {
   const closeBraces = {
     '{': '}',
     '[': ']',
+    '(': ')',
   };
 
   if (!tokens.length) return false;
@@ -15,12 +16,14 @@ const braces = (str) => {
     let nextToken = tokens.shift();
 
     switch (nextToken || EOS) {
+      case '(':
       case '[':
       case '{': {
         stack.push(nextToken);
         break;
       }
 
+      case ')':
       case ']':
       case '}': {
         const openToken = stack.pop();

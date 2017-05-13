@@ -91,5 +91,12 @@ describe('Dada la funcion brace', () => {
       });
     });
 
+    describe('y los tokens son ( )', () => {
+
+      it('entonces debe reconocer los paréntesis', () => {
+        braces('()').should.be.true;
+      });
+    });
+
   });
 });
