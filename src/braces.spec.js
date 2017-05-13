@@ -14,7 +14,7 @@ describe('Dada la funcion brace', () => {
     });
 
     it('no debe aceptar una cadena vacia', () => {
-      braces('').should.not.be.true;
+      braces('').should.be.false;
     });
 
     it('no debe aceptar una apertura sin cierre', () => {
@@ -81,7 +81,6 @@ describe('Dada la funcion brace', () => {
     });
 
     describe('y los tokens son [ ]', () => {
-
       it('entonces debe reconocer los corchetes', () => {
         braces('[]').should.be.true;
       });
@@ -92,7 +91,6 @@ describe('Dada la funcion brace', () => {
     });
 
     describe('y los tokens son ( )', () => {
-
       it('entonces debe reconocer los paréntesis', () => {
         braces('()').should.be.true;
       });
@@ -101,6 +99,5 @@ describe('Dada la funcion brace', () => {
         braces('[({})]{}').should.be.true;
       });
     });
-
   });
 });
