@@ -86,6 +86,9 @@ describe('Dada la funcion brace', () => {
         braces('[]').should.be.true;
       });
 
+      it('entonces debe reconocer los corchetesen conjunto con las llaves', () => {
+        braces('[{}]{}').should.be.true;
+      });
     });
 
   });
