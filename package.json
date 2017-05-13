@@ -1,0 +1,20 @@
+{
+  "name": "braces",
+  "version": "0.0.1",
+  "description": "braces kata. validate balancing braces ({[]})()",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha src"
+  },
+  "keywords": [
+    "kata",
+    "javascript",
+    "braces"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  }
+}
